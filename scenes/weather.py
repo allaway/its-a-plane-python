@@ -146,8 +146,12 @@ def grab_current_temperature_openweather(apikey, units):
         raw_data = urllib.request.urlopen(request).read()
         content = json.loads(raw_data.decode("utf-8"))
         current_temp = content["current"]["temp"]
-    except:
-        pass
+    except urllib.error.URLError as e:
+        print(f"Failed to fetch weather data: {e}")
+    except KeyError as e:
+        print(f"Unexpected API response structure: {e}")
+    except Exception as e:
+        print(f"An unexpected error occurred: {e}")
 
     return current_temp
 
