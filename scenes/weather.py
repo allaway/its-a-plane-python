@@ -143,7 +143,7 @@ def grab_current_temperature_openweather(apikey, units):
             f"https://api.openweathermap.org/data/3.0/onecall?lat={lat}&lon={lon}"
             f"&appid={apikey}&units={units}&exclude=minutely,hourly,daily,alerts"
         )
-        raw_data = urllib.request.urlopen(request).read()
+        raw_data = urllib.request.urlopen(url).read()
         content = json.loads(raw_data.decode("utf-8"))
         current_temp = content["current"]["temp"]
     except urllib.error.URLError as e:
