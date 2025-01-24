@@ -1,4 +1,4 @@
-pythonimport sys
+import sys
 
 from setup import frames
 from utilities.animator import Animator
