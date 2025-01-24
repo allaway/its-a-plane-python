@@ -98,6 +98,8 @@ class Overhead:
             ]
             flights = sorted(flights, key=lambda f: distance_from_flight_to_home(f))
 
+            print(flights)
+
             for flight in flights[:MAX_FLIGHT_LOOKUP]:
                 retries = RETRIES
 
