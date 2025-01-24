@@ -41,7 +41,7 @@ if TEMPERATURE_UNITS != "metric" and TEMPERATURE_UNITS != "imperial":
 
 # Weather API
 WEATHER_API_URL = "https://taps-aff.co.uk/api/"
-OPENWEATHER_API_URL = "https://api.openweathermap.org/data/2.5/"
+OPENWEATHER_API_URL = "https://api.openweathermap.org/data/3/"
 
 
 # Scene Setup
