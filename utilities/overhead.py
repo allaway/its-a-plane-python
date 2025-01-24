@@ -31,7 +31,7 @@ try:
 
 except (ModuleNotFoundError, NameError, ImportError):
     # If there's no config data
-    ZONE_DEFAULT = {"tl_y": 62.61, "tl_x": -13.07, "br_y": 49.71, "br_x": 3.46}
+    ZONE_DEFAULT = {"tl_y":  39.21548886000494, "tl_x":  -94.7485680531041, "br_y": 38.91538033413495, "br_x": -94.30475416916127}
     LOCATION_DEFAULT = [51.509865, -0.118092, EARTH_RADIUS_KM]
 
 
