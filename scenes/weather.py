@@ -134,7 +134,7 @@ def grab_upcoming_rainfall_and_temperature(location, hours):
     return up_coming_rainfall_and_temperature
 
 
-def grab_current_temperature_openweather(location, apikey, units):
+def grab_current_temperature_openweather(apikey, units):
     current_temp = None
 
     try:
@@ -152,7 +152,7 @@ def grab_current_temperature_openweather(location, apikey, units):
         )
         raw_data = urllib.request.urlopen(request).read()
         content = json.loads(raw_data.decode("utf-8"))
-        current_temp = content["main"]["temp"]
+        current_temp = content["current"]["temp"]
     except:
         pass
 
