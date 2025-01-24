@@ -8,6 +8,7 @@ from rgbmatrix import graphics
 from utilities.animator import Animator
 from setup import colours, fonts, frames
 from config import WEATHER_LOCATION
+from config import LOCATION_HOME
 import sys
 
 # Attempt to load config data
@@ -41,7 +42,7 @@ if TEMPERATURE_UNITS != "metric" and TEMPERATURE_UNITS != "imperial":
 
 # Weather API
 WEATHER_API_URL = "https://taps-aff.co.uk/api/"
-OPENWEATHER_API_URL = "https://api.openweathermap.org/data/3/"
+OPENWEATHER_API_URL = "https://api.openweathermap.org/data/3.0/"
 
 
 # Scene Setup
@@ -139,17 +140,19 @@ def grab_current_temperature_openweather(location, apikey, units):
     try:
         request = urllib.request.Request(
             OPENWEATHER_API_URL
-            + "weather?q="
-            + location
+            + "onecall?lat="
+            + LOCATION_HOME[1]
+            + "&lon="
+            + LOCATION_HOME[2]
             + "&appid="
             + apikey
             + "&units="
             + units
+            + "&exclude=minutely,hourly,daily,alerts"
         )
         raw_data = urllib.request.urlopen(request).read()
         content = json.loads(raw_data.decode("utf-8"))
         current_temp = content["main"]["temp"]
-
     except:
         pass
 
