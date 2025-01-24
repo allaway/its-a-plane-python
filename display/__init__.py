@@ -116,8 +116,12 @@ class Display(
             # Check if there's data
             there_is_data = len(self._data) > 0 or not self.overhead.data_is_empty
 
+            print("there_is_data" + there_is_data)
+
             # this marks self.overhead.data as no longer new
             new_data = self.overhead.data
+
+            print("new_data" + new_data)
 
             # See if this matches the data already on the screen
             # This test only checks if it's 2 lists with the same
