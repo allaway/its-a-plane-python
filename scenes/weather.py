@@ -138,17 +138,10 @@ def grab_current_temperature_openweather(apikey, units):
     current_temp = None
 
     try:
-        request = urllib.request.Request(
-            OPENWEATHER_API_URL
-            + "onecall?lat="
-            + LOCATION_HOME[1]
-            + "&lon="
-            + LOCATION_HOME[2]
-            + "&appid="
-            + apikey
-            + "&units="
-            + units
-            + "&exclude=minutely,hourly,daily,alerts"
+        lat, lon = LOCATION_HOME[0], LOCATION_HOME[1]  # Access latitude and longitude from the list
+        url = (
+            f"https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}"
+            f"&appid={apikey}&units={units}&exclude=minutely,hourly,daily,alerts"
         )
         raw_data = urllib.request.urlopen(request).read()
         content = json.loads(raw_data.decode("utf-8"))
