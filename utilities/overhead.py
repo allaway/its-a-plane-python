@@ -14,7 +14,6 @@ try:
 except (ModuleNotFoundError, NameError, ImportError):
     # If there's no config data
     MIN_ALTITUDE = 0  # feet
-
 RETRIES = 3
 RATE_LIMIT_DELAY = 1
 MAX_FLIGHT_LOOKUP = 5
@@ -85,9 +84,17 @@ class Overhead:
 
         data = []
 
+        print(ZONE_DEFAULT)
+        print(MAX_ALTITUDE)
+        print(MIN_ALTITUDE)
+        print(LOCATION_DEFAULT)
+
         # Grab flight details
         try:
             bounds = self._api.get_bounds(ZONE_DEFAULT)
+
+            print(bounds) 
+            
             flights = self._api.get_flights(bounds=bounds)
 
             # Sort flights by closest first
