@@ -7,7 +7,7 @@ ZONE_HOME = {
 LOCATION_HOME = [
     39.075719, # Latitude (deg)
     -94.572643, # Longitude (deg)
-    0.1 # Altitude (km)
+    0 # Altitude (km)
 ]
 WEATHER_LOCATION = "Kansas City"
 OPENWEATHER_API_KEY = "814619bc2345cc67a5189455d203cb43"
